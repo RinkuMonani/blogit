@@ -1,0 +1,35 @@
+.login-content{
+    /* border: 2px solid blue; */
+    position: absolute;
+    top:40%;
+    left:50%;
+    width:600px;
+    transform: translate(-50%, -40%);
+}
+.login-header{
+    background-image: linear-gradient(to right bottom, brown, black);
+    text-align:center;
+    padding:10px;
+    color:white;
+    border: 2px dashed black;
+    /* border-style: dashed */
+    border-radius:5px;
+
+}
+
+.login-submit-button{
+    width:150px;
+    color:white;
+    padding:6px;
+    border-radius:5px;
+    background-image: linear-gradient(to right bottom, brown, black);
+}
+
+.login-form{
+    line-height: 50px;
+    padding:10px;
+    text-align: center;
+    border:2px solid brown;
+    border-top:none;
+}
+

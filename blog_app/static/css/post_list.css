@@ -1,0 +1,31 @@
+.empty-post-list{
+    /* border:2px solid blue; */
+    text-align: center;
+    position: absolute;
+    width:100%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.empty-post-list h1{
+    padding:10px;
+}
+.empty-post-list a{
+    text-decoration: none;
+    padding:10px;
+    display: block;
+    width:150px;
+    border-radius: 5%;
+    margin:auto;
+    color:white;
+    background-image: linear-gradient(to right bottom, brown, black);
+    transition: all 0.2s;
+}
+    /* .empty-post-list a:hover{
+        border: 4px solid black;
+    } */
+
+    .empty-post-list a:active{
+        transform: translateY(3px);
+    }

@@ -1,0 +1,26 @@
+{% extends 'blog_app/base.html' %}
+{% block content %}
+    <!-- <h1>This is post list view</h1> -->
+    <div clas="centerstage">
+    {% if post_list|length == 0 %}
+        <div class="empty-post-list">
+            <h1>No posts available right now...</h1>
+            {% if user.is_authenticated %}
+                <h3><a href="{% url 'post_new' %}">Create new?</a></h3>
+            {% else %}
+                <h3><a href="{% url 'login' %}">Create new?</a></h3>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% for post in post_list %}
+        <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <div class="date">
+                <p>published on : {{post.published|date:"D M Y"}}</p>
+            </div>
+            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{post.approve_comments.count}}</a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'blog_app/base.html' %}
+{% block content %}
+    <div class="login-content">
+        <div class="login-header">
+            <h1>Welcome!</h1>
+            <h4>Enter your credentials and start pening down...</h4>
+        </div>
+
+        <div class="login-form">
+            {% if form.errors %}
+                <p>Invalid Credentials, please try again!</p>
+            {% else %}
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="login-submit-button" type="submit" value="Login">
+                    <input type="hidden" name="next" value="{{next}}">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

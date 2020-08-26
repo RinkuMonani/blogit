@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width" />
+    <title>BASE TEMPLATE</title>
+    
+    <!-- medium style editor -->
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <!-- google fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navigation">
+        <ul>
+            <li><a href="{% url 'post_list' %}">My Blog</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="https://www.github.com/RinkuMonani">Github</a></li>
+            <li><a href="https://www.linkedin.in/in/rinkumonani">Linkedin</a></li>
+        <!-- </ul>
+
+        <ul> -->
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'post_new' %}">New Post</a></li>
+                <li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
+                <li id="logout-link"><a href="{% url 'logout' %}?next=/">Log Out</a></li>
+                <li id="greet-user"><span class="material-icons">account_circle</span> Welcome {{user.username}} !</li>
+            {% else %}
+                <li id="login-link"><a href="{% url 'login' %}"><span class="material-icons">login</span> Login</a></li>
+            {% endif %}
+        </ul>   
+    </div>
+
+    <div class="content-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>

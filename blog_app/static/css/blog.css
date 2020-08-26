@@ -1,0 +1,67 @@
+*{
+  /* font-family: 'RUSSO ONE', sans-serif; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  margin:0;
+  padding:0;
+}
+
+#greet-user{
+  color: white;
+  font-size:20px;
+  padding:10px;
+  float: right;
+  position: relative;
+  bottom:5px;
+}
+  #greet-user span{
+    /* border: 2px solid red; */
+    /* position: absolute; */
+    /* right:215px; */
+    position: relative;
+    top:5px;
+    
+  }
+
+.navigation{
+  background-image: linear-gradient(to right bottom, brown, black);
+}
+.navigation a{
+  color:white;
+  text-decoration:none;
+  padding:12px;
+  font-size: 18px;
+  display: block;
+  transition: all 0.2s;
+}
+  .navigation a:hover{
+      transform: translateY(-3px);
+  }
+
+.navigation ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+.navigation li{
+  display: inline-block;
+}
+
+#login-link, #logout-link{
+  float: right;
+  position: relative;
+}
+  #login-link{
+    bottom: 5px;;
+  }
+  #login-link .material-icons{
+    position: relative;
+    top:5px;
+  }
+
+.content-container{
+  padding:10px;
+  /* border:2px solid red; */
+  min-height: 500px;
+}
